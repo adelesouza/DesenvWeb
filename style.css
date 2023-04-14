@@ -9,7 +9,6 @@
 
 :root {
   --bg-grey: #d9d9d9;
-
   font-size: 62.5%;
   /* o padrão do navegador de 100% é 16px. logo, 10px = 62.5% (de 16px). assim fica mais fácil de eu adequar o font size (em rem) no resto do doc pq eu já tenho a noção de que 1rem = 10px */
   --nav-height: 7.2rem;
@@ -47,7 +46,6 @@ body {
   width: 50%;
   display: inline-flex;
   border-radius: 0.5rem;
-  /* padding: 1rem; */
   align-items: center;
   justify-content: space-between;
 }

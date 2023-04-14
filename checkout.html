@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AAJ - Checkout</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/logo_AAJ.png" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+    <!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#templatemo_main_nav"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+          id="templatemo_main_nav"
+        >
+          <div class="flex-fill">
+            <ul
+              class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Comprar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sobre.html">Sobre</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar align-self-center d-flex">
+            <div
+              class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputMobileSearch"
+                  placeholder="Search ..."
+                />
+                <div class="input-group-text">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <a
+              class="nav-icon d-none d-lg-inline"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#templatemo_search"
+            >
+              <i class="fa fa-fw fa-search text-dark mr-2"></i>
+            </a>
+            <a class="nav-icon position-relative text-decoration-none" href="#">
+              <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+              <span
+                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                >7</span
+              >
+            </a>
+            <a
+              class="nav-icon position-relative text-decoration-none"
+              href="login.html"
+            >
+              <i class="fa fa-fw fa-user text-dark mr-3"></i>
+              <span
+                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                >+99</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade bg-white"
+      id="templatemo_search"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="w-100 pt-1 mb-5 text-right">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form
+          action=""
+          method="get"
+          class="modal-content modal-body border-0 p-0"
+        >
+          <div class="input-group mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="inputModalSearch"
+              name="q"
+              placeholder="Search ..."
+            />
+            <button
+              type="submit"
+              class="input-group-text bg-success text-light"
+            >
+              <i class="fa fa-fw fa-search text-white"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Start Brands -->
+
+    <div class="container">
+      <div class="row-12">
+        <!-- <fieldeset style="border-color: blue"> -->
+        <div class="col-8">
+          <!-- <div class="col-md-9 col-lg-8"> -->
+          <br class="mb-3" />
+          <div class="col-12">
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">*CEP</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">*Endereço</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="username" class="form-label">Complemento</label>
+                  <div class="input-group has-validation">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="username"
+                      placeholder
+                    />
+                    <div class="invalid-feedback">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label"
+                    >*Bairro <span class="text-body-secondary"></span>
+                  </label>
+                  <input type="email" class="form-control" id="email"
+                  placeholder=>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address" class="form-label">*Estado</label>
+                  <input type="text" class="form-control" id="address"
+                  placeholder=>
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="address2" class="form-label">
+                    *Cidade <span class="text-body-secondary"></span
+                  ></label>
+                  <input type="text" class="form-control" id="address2"
+                  placeholder=>
+                </div>
+
+                <hr class="my-4" />
+                <label class="form-check-label" for="same-address"
+                  >*Obrigatório</label
+                >
+              </div>
+
+              <hr class="my-4" />
+
+              <h4 class="mb-3">Pagar com cartão de crédito</h4>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label"
+                    >Nome do titular</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-body-secondary"
+                    >Full name as displayed on card</small
+                  >
+                  <div class="invalid-feedback">Name on card is required</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="cc-number" class="form-label"
+                    >Número do cartão</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cc-expiration" class="form-label">Validade</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Expiration date required</div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Security code required</div>
+                </div>
+              </div>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">Parcelamento</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-body-secondary"
+                    >Full name as displayed on card</small
+                  >
+                  <div class="invalid-feedback">Name on card is required</div>
+
+                  <hr class="my-4" />
+
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">
+                    Finalizar compra com cartão de crédito
+                  </button>
+                  <br />
+                </div>
+              </div>
+
+              <hr class="my-5" />
+              <h4 class="mb-3"><br />Pagar no boleto</h4>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">R$199,80</label>
+                  <br class="text-body-secondary" /><br />Você poderá visualizar
+                  ou imprimir após a finalização do pedido. A data de vencimento
+                  é de 4 dias corridos após a conclusão do pedido. Após esta
+                  data, ele perderá a validade.
+                  <p></p>
+                  <hr class="my-5" />
+
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">
+                    Finalizar compra no boleto
+                  </button>
+                  <br />
+                  <div class="invalid-feedback">Name on card is required</div>
+
+                  <h4 class="mb-3"><br />Pagar no pix</h4>
+
+                  <br class="row gy-3" />
+                  <br class="col-md-6" />
+                  <label for="cc-name" class="form-label">R$199,80</label>
+
+                  <br class="text-body-secondary" />
+                  1. Após a finalização do pedido, abra o app ou banco de sua
+                  preferência. Escolha a opção pagar com código Pix “copia e
+                  cola”, ou código QR. O código tem validade de 13 horas.
+
+                  <br />2. Copie e cole o código, ou escaneie o código Qr com a
+                  câmera do seu celular.Confira todas as informações e autorize
+                  o pagamento.
+
+                  <br />3. Você vai receber a confirmação de pagamento no seu
+                  e-mail e através dos nossos canais. E pronto!
+
+                  <hr class="my-5" />
+
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">
+                    Finalizar compra no pix
+                  </button>
+                  <br />
+                </div>
+                <div class="invalid-feedback">
+                  Name on card is required
+                  <hr class="my-5" />
+                </div>
+
+                <form>
+                  <div class="col-lg-9 m-auto tempaltemo-carousel">
+                    <div class="row d-flex flex-row">
+                      <div class="col-1 align-self-center">
+                        <a
+                          class="h1"
+                          href="#multi-item-example"
+                          role="button"
+                          data-bs-slide="prev"
+                        >
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_01.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_02.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_03.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_04.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_01.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_02.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_03.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                      <div class="col-3 p-md-5">
+                        <a href="#"
+                          ><img
+                            class="img-fluid brand-img"
+                            src="assets/img/brand_04.png"
+                            alt="Brand Logo"
+                        /></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-1 align-self-center">
+                    <a
+                      class="h1"
+                      href="#multi-item-example"
+                      role="button"
+                      data-bs-slide="next"
+                    >
+                    </a>
+                  </div>
+                  <!--End Controls-->
+                </form>
+              </div>
+
+              <script src="assets/js/jquery-1.11.0.min.js"></script>
+              <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+              <script src="assets/js/bootstrap.bundle.min.js"></script>
+              <script src="assets/js/templatemo.js"></script>
+              <script src="assets/js/custom.js"></script>
+              <!-- End Script -->
+            </form>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <!-- <div class="col-md-5 col-lg-4 order-md-last"> -->
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Resumo da compra</span>
+            <span class="badge bg-primary rounded-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Product name</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$12</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Second product</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$8</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Third item</h6>
+                <small class="text-body-secondary">Brief description</small>
+              </div>
+              <span class="text-body-secondary">$5</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between bg-body-tertiary"
+            >
+              <div class="text-success">
+                <h6 class="my-0">Promo code</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">−$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (USD)</span>
+              <strong>$20</strong>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Promo code"
+              />
+              <button type="submit" class="btn btn-secondary">Redeem</button>
+            </div>
+          </form>
+        </div>
+        <!-- </fieldeset> -->
+      </div>
+
+      <footer class="bg-white" id="tempaltemo_footer">
+        <div class="container">
+          <div class="row text-black mb-4">
+            <div class="col-md-8 pt-5">
+              <div class="row text-black mb-4">
+                <div class="col-12 mb-2">
+                  <h3 class="h3 text-black pb-0 border-light logo">Nos siga</h3>
+                </div>
+                <div class="col-auto me-auto">
+                  <ul class="list-inline text-left footer-icons mb-0">
+                    <li class="list-inline-item rounded-circle text-center">
+                      <a
+                        class="text-black text-decoration-none"
+                        target="_blank"
+                        href="https://www.instagram.com/"
+                        ><i class="fab fa-instagram fa-lg fa-fw"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <a
+                        class="text-black text-decoration-none"
+                        target="_blank"
+                        href="https://www.tiktok.com/pt-BR/"
+                        ><i class="fab fa-tiktok fa-lg fa-fw"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <a
+                        class="text-black text-decoration-none"
+                        target="_blank"
+                        href="http://facebook.com/"
+                        ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <a
+                        class="text-black text-decoration-none"
+                        target="_blank"
+                        href="https://www.youtube.com/watch?v=tollGa3S0o8"
+                        ><i class="fab fa-youtube fa-lg fa-fw"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <a
+                        class="text-black text-decoration-none"
+                        target="_blank"
+                        href="https://contate.me/aajdesenvweb"
+                        ><i class="fab fa-whatsapp fa-lg fa-fw"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row text-black mb-4">
+                <div class="col-12 mb-2">
+                  <h3 class="h3 text-black pb-0 border-light logo">
+                    Formas de pagamento
+                  </h3>
+                </div>
+                <div class="col-auto me-auto">
+                  <ul class="list-inline text-left footer-icons">
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/ncard.svg" alt="ncard" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/visa.svg" alt="visa" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/mastercard.svg" alt="mastercard" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/amex.svg" alt="amex" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/dinersclub.svg" alt="dinersclub" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/hipercard.svg" alt="hipercard" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/elo.svg" alt="elo" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/boleto.svg" alt="boleto" />
+                    </li>
+                    <li class="list-inline-item rounded-circle text-center">
+                      <img src="./assets/pix.svg" alt="pix" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 pt-5">
+              <div class="row">
+                <div class="col-5" style="padding-right: 0">
+                  <h3 class="h3 text-black pb-3 border-light logo">
+                    Sobre nós
+                  </h3>
+                </div>
+                <div class="col-7" style="padding: 0">
+                  <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i>
+                </div>
+              </div>
+              <div class="row w-40 pb-4">
+                <a href="#">
+                  <img
+                    class="card-img img-fluid"
+                    src="assets/logo_AAJ.png"
+                    alt="logo"
+                  />
+                </a>
+              </div>
+              <label class="text-black pb-0 border-light">©2023 - AAJ.</label>
+              <label class="text-black pb-3 border-light">
+                Todos os direitos reservados.
+              </label>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

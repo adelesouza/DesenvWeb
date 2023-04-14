@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AAJ - Criar conta</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/logo_AAJ.png" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+
+    <!-- Load map styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+  </head>
+
+  <!-- <body class="bg-cinzaescuro"> -->
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow bg-white">
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#templatemo_main_nav"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+          id="templatemo_main_nav"
+        >
+          <div class="flex-fill">
+            <ul
+              class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Comprar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Sobre</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar align-self-center d-flex">
+            <div
+              class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputMobileSearch"
+                  placeholder="Search ..."
+                />
+                <div class="input-group-text">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <!-- <a
+              class="nav-icon d-none d-lg-inline"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#templatemo_search"
+            >
+              <i class="fa fa-fw fa-search text-dark mr-2"></i>
+            </a> -->
+            <a class="nav-icon position-relative text-decoration-none" href="#">
+              <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+              <span
+                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                >7</span
+              >
+            </a>
+            <a class="nav-icon position-relative text-decoration-none" href="#">
+              <i class="fa fa-fw fa-user text-dark mr-3"></i>
+              <span
+                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                >+99</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Start Contact -->,
+    <div class="container py-5">
+      <div class="row text-black">
+        <div class="col-md-9 m-auto">
+          <h3 class="h3 mb-3">Olá! Seja bem vindo(a)!</h3>
+          <h6>*Obrigatório</h6>
+        </div>
+      </div>
+      <div class="row-12 py-3">
+        <form class="col-md-9 m-auto" method="post" role="form">
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="*nome"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*sobrenome"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*sexo"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="*data de nascimento"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*telefone"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*CPF"
+              />
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="*CEP"
+              />
+            </div>
+            <div class="form-group col-md-6 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*endereço"
+              />
+            </div>
+            <div class="form-group col-md-2 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*número"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="complemento"
+              />
+            </div>
+            <div class="form-group col-md-6 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*bairro"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="*estado"
+              />
+            </div>
+            <div class="form-group col-md-6 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="*cidade"
+              />
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="form-group col-6 mb-3">
+              <div class="form-group col-md-12 mb-3">
+                <input
+                  type="text"
+                  class="form-control mt-1"
+                  id="name"
+                  name="name"
+                  placeholder="*e-mail"
+                />
+              </div>
+
+              <div class="form-group col-md-12 mb-3">
+                <input
+                  type="text"
+                  class="form-control mt-1"
+                  id="name"
+                  name="name"
+                  placeholder="*cria sua senha"
+                />
+              </div>
+
+              <div class="form-group col-md-12 mb-3">
+                <input
+                  type="text"
+                  class="form-control mt-1"
+                  id="name"
+                  name="name"
+                  placeholder="*confirme sua senha"
+                />
+              </div>
+            </div>
+
+            <div class="form-group col-6 mb-3 text-black">
+              <div class="row">
+                <div class="col-1">
+                  <input type="checkbox" id="permissao1" />
+                </div>
+                <div class="col-11">
+                  <label for="permissao1">
+                    Quero receber notificações sobre os meus pedidos por SMS
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <input type="checkbox" id="permissao1" />
+                </div>
+                <div class="col-11">
+                  <label for="permissao1">
+                    Quero receber ofertas e novidades da AAJ por e-mail
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-1">
+                  <input type="checkbox" id="permissao1" />
+                </div>
+                <div class="col-11">
+                  <label for="permissao1">
+                    Concordo com o uso dos meus dados para compra e experiência
+                    no site conforme a Política de Privacidade.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="col-3 text-start mt-2">
+              <button type="submit" class="btn btn-success btn-lg px-3">
+                Criar conta
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Start Footer -->
+    <footer class="bg-white" id="tempaltemo_footer">
+      <div class="container">
+        <div class="row text-black mb-0">
+          <div class="col-md-8 pt-5">
+            <div class="row text-black mb-4">
+              <div class="col-12 mb-2">
+                <h3 class="h3 text-black pb-0 border-light logo">Nos siga</h3>
+              </div>
+              <div class="col-auto me-auto">
+                <ul class="list-inline text-left footer-icons mb-0">
+                  <li class="list-inline-item rounded-circle text-center">
+                    <a
+                      class="text-black text-decoration-none"
+                      target="_blank"
+                      href="https://www.instagram.com/"
+                      ><i class="fab fa-instagram fa-lg fa-fw"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <a
+                      class="text-black text-decoration-none"
+                      target="_blank"
+                      href="https://www.tiktok.com/pt-BR/"
+                      ><i class="fab fa-tiktok fa-lg fa-fw"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <a
+                      class="text-black text-decoration-none"
+                      target="_blank"
+                      href="http://facebook.com/"
+                      ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <a
+                      class="text-black text-decoration-none"
+                      target="_blank"
+                      href="https://www.youtube.com/watch?v=tollGa3S0o8"
+                      ><i class="fab fa-youtube fa-lg fa-fw"></i
+                    ></a>
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <a
+                      class="text-black text-decoration-none"
+                      target="_blank"
+                      href="https://contate.me/aajdesenvweb"
+                      ><i class="fab fa-whatsapp fa-lg fa-fw"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="row text-black mb-4">
+              <div class="col-12 mb-2">
+                <h3 class="h3 text-black pb-0 border-light logo">
+                  Formas de pagamento
+                </h3>
+              </div>
+              <div class="col-auto me-auto">
+                <ul class="list-inline text-left footer-icons">
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/ncard.svg" alt="ncard" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/visa.svg" alt="visa" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/mastercard.svg" alt="mastercard" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/amex.svg" alt="amex" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/dinersclub.svg" alt="dinersclub" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/hipercard.svg" alt="hipercard" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/elo.svg" alt="elo" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/boleto.svg" alt="boleto" />
+                  </li>
+                  <li class="list-inline-item rounded-circle text-center">
+                    <img src="./assets/pix.svg" alt="pix" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pt-5">
+            <div class="row">
+              <div class="col-5" style="padding-right: 0">
+                <h3 class="h3 text-black pb-3 border-light logo">Sobre nós</h3>
+              </div>
+              <div class="col-7" style="padding: 0">
+                <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i>
+              </div>
+            </div>
+            <div class="row w-40 pb-4">
+              <a href="#">
+                <img
+                  class="card-img img-fluid"
+                  src="assets/logo_AAJ.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <label class="text-black pb-0 border-light">©2023 - AAJ.</label>
+            <label class="text-black pb-3 border-light">
+              Todos os direitos reservados.
+            </label>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+  </body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AAJ - Admin</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/logo_AAJ.png" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+
+    <!-- Load map styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow bg-white">
+      <div class="container d-flex justify-content-between align-items-center">
+        <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#templatemo_main_nav"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+          id="templatemo_main_nav"
+        >
+          <div class="flex-fill">
+            <ul
+              class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
+            >
+              <li class="nav-item">
+                <a class="nav-link mx-lg-auto" href="adm1.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="adm3.html">Usuários</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar align-self-center d-flex">
+            <div
+              class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <div class="row-12 py-3">
+        <div class="col-md-9 m-auto">
+          <div class="row">
+            <h3 class="h3 col-md-9 align-self-center">Buscar produtos</h3>
+            <button
+              type="button"
+              class="col-md-3 btn btn-success px-3"
+              href="adm2.html"
+            >
+              <a class="nav-icon position-relative text-white" href="adm2.html"
+                >Listar produtos</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-12 py-3">
+        <form class="col-md-9 m-auto" method="post" role="form">
+          <div class="row align-items-center">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Referência"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <button type="submit" class="btn btn-black px-3">Buscar</button>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="form-group col-md-12 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Descrição"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Grupo"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Sub-grupo"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Uso (indicado para)"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Origem"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Preço de compra"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Preço de venda"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Estoque"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-auto text-start mt-2">
+              <button type="submit" class="btn btn-success px-3">
+                Salvar alterações
+              </button>
+            </div>
+            <div class="col-auto text-start mt-2">
+              <button type="submit" class="btn btn-black px-3">Cancelar</button>
+            </div>
+            <div class="col-3 text-start mt-2">
+              <button type="submit" class="btn btn-cancel px-3">
+                Deletar produto
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row-12 py-3">
+        <div class="col-md-9 m-auto">
+          <div class="row">
+            <h3 class="h3 col-md-9 align-self-center">
+              Buscar unidade de produto
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-12 py-3">
+        <form class="col-md-9 m-auto" method="post" role="form">
+          <div class="row align-items-center">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Código do produto"
+              />
+            </div>
+            <div class="form-group col-md-4 mb-3">
+              <button type="submit" class="btn btn-black px-3">Buscar</button>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Referência"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-12 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Descrição"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Grupo"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Sub-grupo"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Uso (indicado para)"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Origem"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="name"
+                name="name"
+                placeholder="Preço de compra"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Preço de venda"
+              />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <input
+                type="email"
+                class="form-control mt-1"
+                id="email"
+                name="email"
+                placeholder="Estoque"
+              />
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="form-group col-md-auto mb-3">
+              <img src="./assets/img/produto_sample.svg" alt="" />
+            </div>
+            <div class="form-group col-md-3 mb-3">
+              <div class="row mb-3">
+                <input
+                  type="email"
+                  class="form-control mt-1"
+                  id="email"
+                  name="email"
+                  placeholder="Preço de venda"
+                />
+              </div>
+              <div class="row">
+                <input
+                  type="email"
+                  class="form-control mt-1"
+                  id="email"
+                  name="email"
+                  placeholder="Estoque"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-auto text-start mt-2">
+              <button type="submit" class="btn btn-success px-3">
+                Salvar alterações
+              </button>
+            </div>
+            <div class="col-auto text-start mt-2">
+              <button type="submit" class="btn btn-black px-3">Cancelar</button>
+            </div>
+            <div class="col-3 text-start mt-2">
+              <button type="submit" class="btn btn-cancel px-3">
+                Deletar produto
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+  </body>
+</html>
