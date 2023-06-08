@@ -228,7 +228,8 @@ https://templatemo.com/tm-559-zay-shop
       </div>
 
       <div class="row-12 py-3">
-        <form class="col-md-9 m-auto" method="post" role="form">
+        <form action="" id="form2"></form>
+        <div class="col-md-9 m-auto">
           <div class="row align-items-center">
             <div class="form-group col-md-4 mb-3">
               <input
@@ -240,7 +241,9 @@ https://templatemo.com/tm-559-zay-shop
               />
             </div>
             <div class="form-group col-md-4 mb-3">
-              <button type="submit" class="btn btn-black px-3">Buscar</button>
+              <button id="btnBuscarUnd" class="btn btn-black px-3">
+                Buscar
+              </button>
             </div>
           </div>
 
@@ -334,8 +337,15 @@ https://templatemo.com/tm-559-zay-shop
           <hr />
 
           <div class="row">
-            <div class="form-group col-md-auto mb-3">
-              <img id="img_und" src="./assets/img/produto_sample.svg" alt="" />
+            <div class="form-group col-md-6 mb-3">
+              <input
+                type="text"
+                class="form-control mt-1"
+                id="img_src_input"
+                name="img_src_input"
+                placeholder="URL Imagem"
+              />
+              <img class="mt-" id="img_und" src="" alt="" />
             </div>
             <div class="form-group col-md-3 mb-3">
               <div class="row mb-3">
@@ -350,22 +360,22 @@ https://templatemo.com/tm-559-zay-shop
             </div>
           </div>
 
-          <div class="row mt-4">
+          <div class="row">
             <div class="col-auto text-start mt-2">
-              <button type="submit" class="btn btn-success px-3">
+              <button id="btnSalvarUnd" class="btn btn-success px-3">
                 Salvar alterações
               </button>
             </div>
             <!-- <div class="col-auto text-start mt-2">
               <button type="submit" class="btn btn-black px-3">Cancelar</button>
             </div> -->
-            <div class="col-3 text-start mt-2">
-              <button type="submit" class="btn btn-cancel px-3">
-                Deletar produto
+            <div class="col-6 text-start mt-2">
+              <button id="btnDeletarUnd" class="btn btn-cancel px-3">
+                Deletar Unidade Produto
               </button>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
@@ -390,6 +400,24 @@ https://templatemo.com/tm-559-zay-shop
       const btnSalvar = document.getElementById('btnSalvar')
       const btnDeletar = document.getElementById('btnDeletar')
       const btnBuscar = document.getElementById('btnBuscar')
+
+      const form2 = document.getElementById('form2')
+      const codProdutoInputUnd = document.getElementById('cod_produto_und')
+      const referenciaInputUnd = document.getElementById('ref_und')
+      const descricaoInputUnd = document.getElementById('descricao_und')
+      const grupoInputUnd = document.getElementById('grupo_und')
+      const subgrupoInputUnd = document.getElementById('subgrupo_und')
+      const usoInputUnd = document.getElementById('uso_und')
+      const origemInputUnd = document.getElementById('origem_und')
+      const precoCompraInputUnd = document.getElementById('preco_compra_und')
+      const precoVendaInputUnd = document.getElementById('preco_venda_und')
+      const estoqueInputUnd = document.getElementById('estoque_und')
+      const imgInput = document.getElementById('img_src_input')
+      const img = document.getElementById('img_und')
+
+      const btnSalvarUnd = document.getElementById('btnSalvarUnd')
+      const btnDeletarUnd = document.getElementById('btnDeletarUnd')
+      const btnBuscarUnd = document.getElementById('btnBuscarUnd')
 
       btnSalvar.addEventListener('click', () => {
         const referencia = referenciaInput.value
@@ -461,7 +489,6 @@ https://templatemo.com/tm-559-zay-shop
             })
         }
       })
-
       btnDeletar.addEventListener('click', () => {
         const referencia = referenciaInput.value
 
@@ -477,7 +504,6 @@ https://templatemo.com/tm-559-zay-shop
               '</strong></div>'
           })
       })
-
       btnBuscar.addEventListener('click', () => {
         const referencia = referenciaInput.value
 
@@ -494,6 +520,125 @@ https://templatemo.com/tm-559-zay-shop
             document.getElementById('preco_venda').value =
               response.data.preco_venda
             document.getElementById('estoque').value = response.data.estoque
+          })
+          .catch(function (err) {
+            document.getElementById('output').innerHTML =
+              '<div class="alert alert-danger" role="alert"><strong>' +
+              err.message +
+              '</strong></div>'
+          })
+      })
+
+      btnSalvarUnd.addEventListener('click', () => {
+        const cod_produto = codProdutoInputUnd.value
+        const referenciaUnd = referenciaInputUnd.value
+        const descricaoUnd = descricaoInputUnd.value
+        const grupoUnd = grupoInputUnd.value
+        const subgrupoUnd = subgrupoInputUnd.value
+        const usoUnd = usoInputUnd.value
+        const origemUnd = origemInputUnd.value
+        const preco_compraUnd = precoCompraInputUnd.value
+        const preco_vendaUnd = precoVendaInputUnd.value
+        const estoqueUnd = estoqueInputUnd.value
+        const imgSrc = imgInput.value
+
+        if (cod_produto == '') {
+          axios
+            .post('http://localhost:3000/undproduto/', {
+              referencia: referenciaUnd,
+              descricao: descricaoUnd,
+              grupo: grupoUnd,
+              subgrupo: subgrupoUnd,
+              uso: usoUnd,
+              origem: origemUnd,
+              preco_compra: preco_compraUnd,
+              preco_venda: preco_vendaUnd,
+              estoque: estoqueUnd,
+              img: imgSrc
+            })
+            .then(response => {
+              output.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> Cadastro efetuado.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`
+              form2.reset()
+            })
+            .catch(function (err) {
+              document.getElementById('output').innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erro! </strong>` +
+                err.message +
+                `
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`
+            })
+        } else {
+          axios
+            .put('http://localhost:3000/undproduto/' + cod_produto + '', {
+              referencia: referenciaUnd,
+              descricao: descricaoUnd,
+              grupo: grupoUnd,
+              subgrupo: subgrupoUnd,
+              uso: usoUnd,
+              origem: origemUnd,
+              preco_compra: preco_compraUnd,
+              preco_venda: preco_vendaUnd,
+              estoque: estoqueUnd,
+              img: imgSrc
+            })
+            .then(response => {
+              output.innerHTML = `<div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> Atualização efetuada.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`
+            })
+            .catch(function (err) {
+              document.getElementById('output').innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erro! </strong>` +
+                err.message +
+                `
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`
+            })
+        }
+      })
+      btnBuscarUnd.addEventListener('click', () => {
+        const cod_produto = codProdutoInputUnd.value
+
+        axios
+          .get('http://localhost:3000/undproduto/' + cod_produto + '')
+          .then(function (response) {
+            document.getElementById('ref_und').value = response.data.referencia
+            document.getElementById('descricao_und').value =
+              response.data.descricao
+            document.getElementById('grupo_und').value = response.data.grupo
+            document.getElementById('subgrupo_und').value =
+              response.data.subgrupo
+            document.getElementById('uso_und').value = response.data.uso
+            document.getElementById('origem_und').value = response.data.origem
+            document.getElementById('preco_compra_und').value =
+              response.data.preco_compra
+            document.getElementById('preco_venda_und').value =
+              response.data.preco_venda
+            document.getElementById('estoque_und').value = response.data.estoque
+            document.getElementById('img_src_input').value = response.data.img
+            document.getElementById('img_und').src = response.data.img
+          })
+          .catch(function (err) {
+            document.getElementById('output').innerHTML =
+              '<div class="alert alert-danger" role="alert"><strong>' +
+              err.message +
+              '</strong></div>'
+          })
+      })
+      btnDeletarUnd.addEventListener('click', () => {
+        const cod_produto = codProdutoInputUnd.value
+
+        axios
+          .delete('http://localhost:3000/undproduto/' + cod_produto + '')
+          .then(function (response) {
+            location.reload()
           })
           .catch(function (err) {
             document.getElementById('output').innerHTML =

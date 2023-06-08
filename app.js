@@ -44,12 +44,42 @@ router.get('/produto/:id?', async function (req, res, next) {
   }
 })
 
+router.get('/undproduto/:id?', async function (req, res, next) {
+  //o "?" depois do :id diz que é um parâmetro opcional
+  try {
+    const db = await connect()
+    if (req.params.id) {
+      res.json(
+        await db
+          .collection('undproduto')
+          .findOne({ _id: new ObjectId(req.params.id) })
+      )
+    } else {
+      res.json(await db.collection('undproduto').find().toArray())
+    }
+  } catch (ex) {
+    console.log(ex)
+    res.status(400).json({ erro: `${ex}` })
+  }
+})
+
 //POST
 router.post('/produto', async function (req, res, next) {
   try {
     const produto = req.body
     const db = await connect()
     res.json(await db.collection('produto').insertOne(produto))
+  } catch (ex) {
+    console.log(ex)
+    res.status(400).json({ erro: `${ex}` })
+  }
+})
+
+router.post('/undproduto', async function (req, res, next) {
+  try {
+    const undproduto = req.body
+    const db = await connect()
+    res.json(await db.collection('undproduto').insertOne(undproduto))
   } catch (ex) {
     console.log(ex)
     res.status(400).json({ erro: `${ex}` })
@@ -71,6 +101,20 @@ router.put('/produto/:id', async function (req, res, next) {
     res.status(400).json({ erro: `${ex}` })
   }
 })
+router.put('/undproduto/:id', async function (req, res, next) {
+  try {
+    const undproduto = req.body
+    const db = await connect()
+    res.json(
+      await db
+        .collection('undproduto')
+        .updateOne({ _id: new ObjectId(req.params.id) }, { $set: undproduto })
+    )
+  } catch (ex) {
+    console.log(ex)
+    res.status(400).json({ erro: `${ex}` })
+  }
+})
 
 //DELETE
 router.delete('/produto/:id', async function (req, res, next) {
@@ -79,6 +123,20 @@ router.delete('/produto/:id', async function (req, res, next) {
     res.json(
       await db
         .collection('produto')
+        .deleteOne({ _id: new ObjectId(req.params.id) })
+    )
+  } catch (ex) {
+    console.log(ex)
+    res.status(400).json({ erro: `${ex}` })
+  }
+})
+
+router.delete('/undproduto/:id', async function (req, res, next) {
+  try {
+    const db = await connect()
+    res.json(
+      await db
+        .collection('undproduto')
         .deleteOne({ _id: new ObjectId(req.params.id) })
     )
   } catch (ex) {
