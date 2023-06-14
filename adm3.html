@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,14 +11,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/templatemo.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <!-- Start Script -->
-        <script src="assets/js/jquery-1.11.0.min.js"></script>
-        <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/templatemo.js"></script>
-        <script src="assets/js/custom.js"></script>
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
 
     <!-- Load fonts style after rendering the layout styles -->
     <link
@@ -45,6 +43,7 @@ https://templatemo.com/tm-559-zay-shop
   </head>
 
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-light shadow bg-white">
       <div class="container d-flex justify-content-between align-items-center">
         <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
@@ -86,6 +85,8 @@ https://templatemo.com/tm-559-zay-shop
       </div>
     </nav>
 
+    <div id="output"></div>
+
     <div class="container py-5">
       <div class="row-12 py-3">
         <div class="col-md-9 m-auto">
@@ -105,7 +106,8 @@ https://templatemo.com/tm-559-zay-shop
       </div>
 
       <div class="row-12 py-3">
-        <form class="col-md-9 m-auto" method="post" role="form">
+        <form action="" id="form1"></form>
+        <div class="col-md-9 m-auto">
           <div class="row align-items-center">
             <div class="form-group col-md-4 mb-3">
               <input
@@ -117,7 +119,7 @@ https://templatemo.com/tm-559-zay-shop
               />
             </div>
             <div class="form-group col-md-4 mb-3">
-              <button type="submit" class="btn btn-black px-3"id="buscar">Buscar</button>
+              <button class="btn btn-black px-3" id="buscar">Buscar</button>
             </div>
           </div>
 
@@ -255,46 +257,6 @@ https://templatemo.com/tm-559-zay-shop
             </div>
           </div>
 
-          <!-- ----------------------- -->
-
-          <div class="row">
-            <div class="form-group col-md-4 mb-3">
-              <input
-                type="text"
-                class="form-control mt-1"
-                id="permissao_1"
-                name="permissao_1"
-                placeholder="Permissão 1*"
-              />
-            </div>
-            <div class="form-group col-md-4 mb-3">
-              <input
-                type="text"
-                class="form-control mt-1"
-                id="permissao_2"
-                name="permissao_2"
-                placeholder="Permissão 2*"
-              />
-            </div>
-            <div class="form-group col-md-4 mb-3">
-              <input
-                type="text"
-                class="form-control mt-1"
-                id="permissao_3"
-                name="permissao_3"
-                placeholder="Permissão 3*"
-              />
-            </div>
-          </div>
-
-          <!-- <div class="row">
-            <div class="col-md-12 mb-3">
-              <a class="nav-icon position-relative text-black" href="#"
-                >Visualizar produtos comprados</a
-              >
-            </div>
-          </div> -->
-
           <div class="row">
             <div class="form-group col-md-2 mb-3">
               <input
@@ -309,7 +271,7 @@ https://templatemo.com/tm-559-zay-shop
 
           <div class="row mt-4">
             <div class="col-auto text-start mt-2">
-              <button type="submit" class="btn btn-success px-3"id=" salvar_alter">
+              <button class="btn btn-success px-3" id="salvar_alter">
                 Salvar alterações
               </button>
             </div>
@@ -319,8 +281,7 @@ https://templatemo.com/tm-559-zay-shop
               </button>
             </div>
           </div>
-
-          <div class="row mt-5">
+          <!-- <div class="row mt-5">
             <div class="col-12">
               <div class="row">
                 <h6 class="h6 col-md-12 align-self-center">
@@ -340,13 +301,10 @@ https://templatemo.com/tm-559-zay-shop
                   experiência no site conforme a Política de Privacidade.”
                 </h6>
               </div>
-            </div>
-          </div>
-        </form>
+            </div> -->
+        </div>
       </div>
     </div>
-
-    
 
     <script>
       const codigoInput = document.getElementById('codigo')
@@ -357,223 +315,116 @@ https://templatemo.com/tm-559-zay-shop
       const telefoneInput = document.getElementById('telefone')
       const cpfInput = document.getElementById('cpf')
       const cepInput = document.getElementById('cep')
-      const enderencoInput = document.getElementById('endereco')
+      const enderecoInput = document.getElementById('endereco')
       const numeroInput = document.getElementById('numero')
       const complementoInput = document.getElementById('complemento')
       const bairroInput = document.getElementById('bairro')
       const estadoInput = document.getElementById('estado')
       const cidadeInput = document.getElementById('cidade')
-      const permissao_1Input = document.getElementById('permissao_1')
-      const permissao_2Input = document.getElementById('permissao_2')
-      const permissao_3Input = document.getElementById('permissao_3')
+
+      const tipoInput = document.getElementById('tipo')
 
       const btnBuscar = document.getElementById('buscar')
       const btnsalvar_alter = document.getElementById('salvar_alter')
-      const btnDeletar = document.getElementById('btnDeletar');
+      const btnDeletar = document.getElementById('btnDeletar')
 
       btnBuscar.addEventListener('click', () => {
-        const codigo = codigoInput.value;
-        const nome = nomeInput.value;
-        const sobrenome = sobrenomeInput.value;
-        const sexo = sexoInput.value;
-        const dataNascimento = dataNascimentoInput.value;
-        const telefone = telefoneInput.value;
-        const cpf = cpfInput.value;
-        const cep = cepInput.value;
-        const endereco = enderecoInput.value;
-        const numero = numeroInput.value;
-        const complemento = complementoInput.value;
-        const bairro = bairroInput.value;
-        const estado = estadoInput.value;
-        const cidade = cidadeInput.value;
-        const permissao_1 = permissao_1Input.value;
-        const permissao_2 = permissao_2Input.value;
-        const permissao_3 = permissao_3Input.value;
+        const codigo = codigoInput.value
 
-        console.log("oii")
+        axios
+          .get('http://localhost:3000/usuario/' + codigo + '')
+          .then(function (response) {
+            nomeInput.value = response.data.nome
+            sobrenomeInput.value = response.data.sobrenome
+            sexoInput.value = response.data.sexo
+            dataNascimentoInput.value = response.data.data_nascimento
+            telefoneInput.value = response.data.telefone
+            cpfInput.value = response.data.cpf
+            cepInput.value = response.data.cep
+            enderecoInput.value = response.data.endereco
+            numeroInput.value = response.data.numero
+            complementoInput.value = response.data.complemento
+            bairroInput.value = response.data.bairro
+            estadoInput.value = response.data.estado
+            cidadeInput.value = response.data.cidade
+            tipoInput.value = response.data.tipo
+          })
+          .catch(function (err) {
+            document.getElementById('output').innerHTML =
+              '<div class="alert alert-danger" role="alert"><strong>' +
+              err.message +
+              '</strong></div>'
+          })
+      })
 
-  if (codigo !== '') {
-    
-  //   axios
-  //     .get(`http://localhost:3000/adm3/${codigo}`)
-  //     .then(response => {
-  //       console.log('estou dentro do then')
-  //       const data = response.data
-  //       nomeInput.value = data.nome;
-  //       sobrenome.value = data.sobrenome
-  //       sexo.value = data.sexo
-  //       dataNascimento.value = data.dataNascimento
-  //       data.value = data.telefone
-  //       cpf.value = data.cpf
-  //       cep.value = data.cep
-  //       endereco.value = data.endereco
-  //       numero.value = data.numero
-  //       complemento.value = data.complemento
-  //       bairro.value = data.bairro
-  //       estado.value = data.estado
-  //       cidade.value = data.cidade
-  //       permissao_1.value = data.permissao_1
-  //       permissao_2.value = data.permissao_2
-  //       permissao_3.value = data.permissao_3
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //     });
-  }
-});
-// btn.addEventListener('click', () => {
-//   const codigo = codigoInput.value;
-//   const nome = nomeInput.value;
-//   const sobrenome = sobrenomeInput.value;
-//   const sexo = sexoInput.value;
-//   const dataNascimento = dataNascimentoInput.value;
-//   const telefone = telefoneInput.value;
-//   const cpf = cpfInput.value;
-//   const cep = cepInput.value;
-//   const endereco = enderecoInput.value;
-//   const numero = numeroInput.value;
-//   const complemento = complementoInput.value;
-//   const bairro = bairroInput.value;
-//   const estado = estadoInput.value;
-//   const cidade = cidadeInput.value;
-//   const permissao_1 = permissao_1Input.value;
-//   const permissao_2 = permissao_2Input.value;
-//   const permissao_3 = permissao_3Input.value;
+      btnsalvar_alter.addEventListener('click', () => {
+        const codigo = codigoInput.value
 
-//   if (codigo == '') {
-//     axios
-//       .post('http://localhost:3000/adm3/', {
-//         nome: nome,
-//         sobrenome: sobrenome,
-//         sexo: sexo,
-//         dataNascimento: dataNascimento,
-//         telefone: telefone,
-//         cpf: cpf,
-//         cep: cep,
-//         endereco: endereco,
-//         numero: numero,
-//         complemento: complemento,
-//         bairro: bairro,
-//         estado: estado,
-//         cidade: cidade,
-//         permissao_1: permissao_1,
-//         permissao_2: permissao_2,
-//         permissao_3: permissao_3,
-//       })
-//       .then(response => {
-//         document.getElementById('output').innerHTML = `
-//           <div class="alert alert-success alert-dismissible fade show" role="alert">
-//             <strong>Sucesso!</strong> Cadastro efetuado.
-//             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-//           </div>`;
-//       })
-//       .catch(function (err) {
-//         document.getElementById('output').innerHTML = `
-//           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-//             <strong>Erro! </strong>` +
-//           err.message +
-//           `
-//             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-//           </div>`;
-//       });
-//   }
-// });
+        const nome = nomeInput.value
+        const sobrenome = sobrenomeInput.value
+        const sexo = sexoInput.value
+        const dataNascimento = dataNascimentoInput.value
+        const telefone = telefoneInput.value
+        const cpf = cpfInput.value
+        const cep = cepInput.value
+        const endereco = enderecoInput.value
+        const numero = numeroInput.value
+        const complemento = complementoInput.value
+        const bairro = bairroInput.value
+        const estado = estadoInput.value
+        const cidade = cidadeInput.value
 
+        console.log('oi')
 
-
-
-
-
-btnDeletar.addEventListener('click', () => {
-  const codigo = codigoInput.value;
-
-  axios
-    .delete('http://localhost:3000/adm3/' + codigo)
-    .then(function (response) {
-      location.reload();
-    })
-    .catch(function (err) {
-      document.getElementById('output').innerHTML =
-        '<div class="alert alert-danger" role="alert"><strong>' +
-        err.message +
-        '</strong></div>';
-    });
-});
-
-
-        // if (codigo !== '') {
-        //   axios
-        //     .get('http://localhost:3000/adm3/', {
-        //       nome: nome,
-        //       sobrenome: sobrenome,
-        //       sexo: sexo,
-        //       dataNascimento: dataNascimento,
-        //       telefone: telefone,
-        //       cpf: cpf,
-        //       cep: cep,
-        //       enderenco: enderenco,
-        //       numero: numero,
-        //       complemento :complemento,
-        //       bairro:bairro,
-        //       estado:estado,
-        //       cidade:cidade,
-        //       permissao_1:permissao_1,
-        //       permissao_2:permissao_2,
-        //       permissao_3:permissao_3
-        //     })
-        //     .then(response => {
-        //       output.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-        //     <strong>Sucesso!</strong> Cadastro efetuado.
-        //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        //   </div>`
-        //     document.getElementById('nome').value = ''
-        //     document.getElementById('sobrenome').value = ''
-        //     document.getElementById('sexo').value = ''
-        //     document.getElementById('dataNascimento').value = ''
-        //     document.getElementById('telefone').value = ''
-        //     document.getElementById('cpf').value = ''
-        //     document.getElementById('cep').value = ''
-        //     document.getElementById('enderenco').value = ''
-        //     document.getElementById('numero').value = ''
-        //     document.getElementById('complemento').value = ''
-        //     document.getElementById('bairro').value = ''
-        //     document.getElementById('estado').value = ''
-        //     document.getElementById('cidade').value = ''
-        //     document.getElementById('permissao_1').value = ''
-        //     document.getElementById('permissao_2').value = ''
-        //     document.getElementById('permissao_3').value = ''
-        //   })
-        //     .catch(function (err) {
-        //       document.getElementById('output').innerHTML =
-        //         `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        //     <strong>Erro! </strong>` +
-        //         err.message +
-        //         `
-        //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        //   </div>`
-        //     })
-        // } 
-        /*else {
+        if (codigo == '') {
           axios
-            .get('http://localhost:3000/adm3/' + codigo + '', {
-              
+            .post('http://localhost:3000/usuario', {
               nome: nome,
               sobrenome: sobrenome,
               sexo: sexo,
-              dataNascimento: dataNascimento,
+              data_nascimento: dataNascimento,
               telefone: telefone,
               cpf: cpf,
               cep: cep,
-              enderenco: enderenco,
+              endereco: endereco,
               numero: numero,
-              complemento :complemento,
-              bairro:bairro,
-              estado:estado,
-              cidade:cidade,
-              permissao_1:permissao_1,
-              permissao_2:permissao_2,
-              permissao_3:permissao_3
-            
+              complemento: complemento,
+              bairro: bairro,
+              estado: estado,
+              cidade: cidade
+            })
+            .then(response => {
+              output.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sucesso!</strong> Cadastro efetuado.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+              form1.reset()
+            })
+            .catch(function (err) {
+              document.getElementById('output').innerHTML =
+                `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Erro! </strong>` +
+                err.message +
+                `
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+            })
+        } else {
+          axios
+            .put('http://localhost:3000/usuario/' + codigo + '', {
+              nome: nome,
+              sobrenome: sobrenome,
+              sexo: sexo,
+              data_nascimento: dataNascimento,
+              telefone: telefone,
+              cpf: cpf,
+              cep: cep,
+              endereco: endereco,
+              numero: numero,
+              complemento: complemento,
+              bairro: bairro,
+              estado: estado,
+              cidade: cidade
             })
             .then(response => {
               output.innerHTML = `<div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -590,210 +441,25 @@ btnDeletar.addEventListener('click', () => {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>`
             })
-        }*/
-      // })
-      // btndeletar.addEventListener('click', () => {
-      //   // const referencia = referenciaInput.value
-      //   const codigo = codigoInput.value
-      //   axios
-      //     .delete('http://localhost:3000/adm3/' + codigo + '')
-      //     .then(function (response) {
-      //       location.reload()
-      //     })
-      //     .catch(function (err) {
-      //       document.getElementById('output').innerHTML =
-      //         '<div class="alert alert-danger" role="alert"><strong>' +
-      //         err.message +
-      //         '</strong></div>'
-      //     })
-      // })
+        }
+      })
 
-      
-      // btnBuscar.addEventListener('click', () => {
-      //   const referencia = referenciaInput.value
+      btnDeletar.addEventListener('click', () => {
+        const codigo = codigoInput.value
 
-      //   axios
-      //     .get('http://localhost:3000/adm3/' + codigo + '') //referencia + '')
-      //     .then(function (response) {
-            
-          
-      //       document.getElementById('nome').value = response.data.nome
-      //       document.getElementById('sobrenome').value = response.data.sobrenome
-      //       document.getElementById('sexo').value = response.data.sexo
-      //       document.getElementById('dataNascimento').value = response.data.dataNascimento
-      //       document.getElementById('telefone').value = response.data.telefone
-      //       document.getElementById('cpf').value = response.data.cpf
-      //       document.getElementById('cep').value = response.data.cep
-      //       document.getElementById('enderenco').value = response.data.enderenco
-      //       document.getElementById('numero').value = response.data.numero
-      //       document.getElementById('complemento').value = response.data.complemento
-      //       document.getElementById('bairro').value = response.data.bairro
-      //       document.getElementById('estado').value = response.data.estado
-      //       document.getElementById('cidade').value = response.data.cidade
-      //       document.getElementById('permissao_1').value = response.data.permissao_1
-      //       document.getElementById('permissao_2').value = response.data.permissao_2
-      //       document.getElementById('permissao_3').value = response.data.permissao_3
-            
-      //     })
-      //     .catch(function (err) {
-      //       document.getElementById('output').innerHTML =
-      //         '<div class="alert alert-danger" role="alert"><strong>' +
-      //         err.message +
-      //         '</strong></div>'
-      //     })
-      // })
-
-      // btnSalvarUnd.addEventListener('click', () => {
-      //   document.getElementById('nome').value = response.data.nome
-      //       document.getElementById('sobrenome').value = response.data.sobrenome
-      //       document.getElementById('sexo').value = response.data.sexo
-      //       document.getElementById('dataNascimento').value = response.data.dataNascimento
-      //       document.getElementById('telefone').value = response.data.telefone
-      //       document.getElementById('cpf').value = response.data.cpf
-      //       document.getElementById('cep').value = response.data.cep
-      //       document.getElementById('enderenco').value = response.data.enderenco
-      //       document.getElementById('numero').value = response.data.numero
-      //       document.getElementById('complemento').value = response.data.complemento
-      //       document.getElementById('bairro').value = response.data.bairro
-      //       document.getElementById('estado').value = response.data.estado
-      //       document.getElementById('cidade').value = response.data.cidade
-      //       document.getElementById('permissao_1').value = response.data.permissao_1
-      //       document.getElementById('permissao_2').value = response.data.permissao_2
-      //       document.getElementById('permissao_3').value = response.data.permissao_3
-
-
-      //       document.getElementById('nome').value = ''
-      //       document.getElementById('sobrenome').value = ''
-      //       document.getElementById('sexo').value = ''
-      //       document.getElementById('dataNascimento').value = ''
-      //       document.getElementById('telefone').value = ''
-      //       document.getElementById('cpf').value = ''
-      //       document.getElementById('cep').value = ''
-      //       document.getElementById('enderenco').value = ''
-      //       document.getElementById('numero').value = ''
-      //       document.getElementById('complemento').value = ''
-      //       document.getElementById('bairro').value = ''
-      //       document.getElementById('estado').value = ''
-      //       document.getElementById('cidade').value = ''
-      //       document.getElementById('permissao_1').value = ''
-      //       document.getElementById('permissao_2').value = ''
-      //       document.getElementById('permissao_3').value = ''
-        
-
-      //   if (codigo == '') {
-      //     axios
-      //       .post('http://localhost:3000/adm3/', {
-      //         nome: nome,
-      //         sobrenome: sobrenome,
-      //         sexo: sexo,
-      //         dataNascimento: dataNascimento,
-      //         telefone: telefone,
-      //         cpf: cpf,
-      //         cep: cep,
-      //         enderenco: enderenco,
-      //         numero: numero,
-      //         complemento :complemento,
-      //         bairro:bairro,
-      //         estado:estado,
-      //         cidade:cidade,
-      //         permissao_1:permissao_1,
-      //         permissao_2:permissao_2,
-      //         permissao_3:permissao_3
-            
-      //       })
-      //       .then(response => {
-      //         output.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-      //       <strong>Sucesso!</strong> Cadastro efetuado.
-      //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      //     </div>`
-      //         adm3.reset()
-      //       })
-      //     .catch(function (err) {
-      //         document.getElementById('output').innerHTML =
-      //           `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      //       <strong>Erro! </strong>` +
-      //           err.message +
-      //           `
-      //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      //     </div>`
-      //       })
-      //   } else {
-      //     axios
-      //       .put('http://localhost:3000/adm3/' + cod_produto + '', {
-      //         referencia: referenciaUnd,
-      //         descricao: descricaoUnd,
-      //         grupo: grupoUnd,
-      //         subgrupo: subgrupoUnd,
-      //         uso: usoUnd,
-      //         origem: origemUnd,
-      //         preco_compra: preco_compraUnd,
-      //         preco_venda: preco_vendaUnd,
-      //         estoque: estoqueUnd,
-      //         img: imgSrc
-      //       })
-      //       .then(response => {
-      //         output.innerHTML = `<div class="alert alert-primary alert-dismissible fade show" role="alert">
-      //       <strong>Sucesso!</strong> Atualização efetuada.
-      //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      //     </div>`
-      //       })
-      //       .catch(function (err) {
-      //         document.getElementById('output').innerHTML =
-      //           `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-      //       <strong>Erro! </strong>` +
-      //           err.message +
-      //           `
-      //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      //     </div>`
-      //       })
-      //   }
-      // })
-      // btnBuscarUnd.addEventListener('click', () => {
-      //   const cod_produto = codProdutoInputUnd.value
-
-      //   axios
-      //     .get('http://localhost:3000/undproduto/' + cod_produto + '')
-      //     .then(function (response) {
-      //       document.getElementById('ref_und').value = response.data.referencia
-      //       document.getElementById('descricao_und').value =
-      //         response.data.descricao
-      //       document.getElementById('grupo_und').value = response.data.grupo
-      //       document.getElementById('subgrupo_und').value =
-      //         response.data.subgrupo
-      //       document.getElementById('uso_und').value = response.data.uso
-      //       document.getElementById('origem_und').value = response.data.origem
-      //       document.getElementById('preco_compra_und').value =
-      //         response.data.preco_compra
-      //       document.getElementById('preco_venda_und').value =
-      //         response.data.preco_venda
-      //       document.getElementById('estoque_und').value = response.data.estoque
-      //       document.getElementById('img_src_input').value = response.data.img
-      //       document.getElementById('img_und').src = response.data.img
-      //     })
-      //     .catch(function (err) {
-      //       document.getElementById('output').innerHTML =
-      //         '<div class="alert alert-danger" role="alert"><strong>' +
-      //         err.message +
-      //         '</strong></div>'
-      //     })
-      // })
-      // btnDeletarUnd.addEventListener('click', () => {
-      //   const cod_produto = codProdutoInputUnd.value
-
-      //   axios
-      //     .delete('http://localhost:3000/undproduto/' + cod_produto + '')
-      //     .then(function (response) {
-      //       location.reload()
-      //     })
-      //     .catch(function (err) {
-      //       document.getElementById('output').innerHTML =
-      //         '<div class="alert alert-danger" role="alert"><strong>' +
-      //         err.message +
-      //         '</strong></div>'
-      //     })
-      // })
+        axios
+          .delete('http://localhost:3000/usuario/' + codigo + '')
+          .then(function (response) {
+            location.reload()
+          })
+          .catch(function (err) {
+            document.getElementById('output').innerHTML =
+              '<div class="alert alert-danger" role="alert"><strong>' +
+              err.message +
+              '</strong></div>'
+          })
+      })
     </script>
     <!-- End Script -->
-
   </body>
 </html>

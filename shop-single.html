@@ -32,6 +32,7 @@ https://templatemo.com/tm-559-zay-shop
   </head>
 
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-light shadow">
       <div class="container d-flex justify-content-between align-items-center">
         <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
@@ -91,13 +92,12 @@ https://templatemo.com/tm-559-zay-shop
             <div class="card mb-3">
               <img
                 class="card-img img-fluid"
-                src="./assets/img/produto_sample.svg"
+                src=""
                 alt="Card image cap"
-                id="product-detail"
+                id="img_produto"
               />
             </div>
             <div class="row">
-              <!--Start Controls-->
               <div class="col-1 align-self-center">
                 <a
                   href="#multi-item-example"
@@ -124,8 +124,9 @@ https://templatemo.com/tm-559-zay-shop
                         <a href="#">
                           <img
                             class="card-img img-fluid"
-                            src="./assets/img/produto_sample.svg"
+                            src=""
                             alt="Product Image 1"
+                            id="carousel-img-1"
                           />
                         </a>
                       </div>
@@ -135,6 +136,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 2"
+                            id="carousel-img-2"
                           />
                         </a>
                       </div>
@@ -144,6 +146,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 3"
+                            id="carousel-img-3"
                           />
                         </a>
                       </div>
@@ -160,6 +163,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 4"
+                            id="carousel-img-4"
                           />
                         </a>
                       </div>
@@ -169,6 +173,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 5"
+                            id="carousel-img-5"
                           />
                         </a>
                       </div>
@@ -178,6 +183,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 6"
+                            id="carousel-img-6"
                           />
                         </a>
                       </div>
@@ -194,6 +200,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 7"
+                            id="carousel-img-7"
                           />
                         </a>
                       </div>
@@ -203,6 +210,7 @@ https://templatemo.com/tm-559-zay-shop
                             class="card-img img-fluid"
                             src="./assets/img/produto_sample.svg"
                             alt="Product Image 8"
+                            id="carousel-img-8"
                           />
                         </a>
                       </div>
@@ -210,8 +218,9 @@ https://templatemo.com/tm-559-zay-shop
                         <a href="#">
                           <img
                             class="card-img img-fluid"
-                            src="./assets/img/image 35.png"
+                            src="./assets/img/produto_sample.svg"
                             alt="Product Image 9"
+                            id="carousel-img-9"
                           />
                         </a>
                       </div>
@@ -240,33 +249,49 @@ https://templatemo.com/tm-559-zay-shop
           <div class="col-lg-7 mt-5">
             <div class="card">
               <div class="card-body">
-                <h1 class="h2">
-                  Chinelo Santa Lolla Flip Flop Tiras Cruzadas Feminino - Azul
-                </h1>
-                <p class="h2 py-2">R$99.99</p>
+                <input
+                  id="descricao"
+                  style="border: none"
+                  readonly
+                  class="h2 mt-2"
+                />
+                <input
+                  id="preco_venda"
+                  style="border: none"
+                  readonly
+                  class="h2 py-2"
+                />
                 <!-- <p class="py-2">
                   <i class="fa fa-star text-warning"></i>
                   <i class="fa fa-star text-warning"></i>
                   <i class="fa fa-star text-warning"></i>
-                  <i class="fa fa-star text-warning"></i>
+                  <i class="fa fa-star text-warning"></i> 
                   <i class="fa fa-star text-secondary"></i>
                   <span class="list-inline-item text-dark"
                     >Rating 4.8 | 56 avaliações</span
                   >
                 </p> -->
-                <ul class="list-inline">
-                  <li class="list-inline-item">
-                    <h6>Ref.: xxxxxxxxxx</h6>
-                  </li>
-                  <li class="list-inline-item"></li>
-                </ul>
+                <h6>
+                  Ref.:
+                  <input id="referencia" style="border: none" readonly />
+                </h6>
+                <h6>
+                  Grupo:
+                  <input id="grupo" style="border: none" readonly />
+                </h6>
+                <h6>
+                  Subrupo:
+                  <input id="subgrupo" style="border: none" readonly />
+                </h6>
+                <h6>
+                  Uso:
+                  <input id="uso" style="border: none" readonly />
+                </h6>
+                <h6>
+                  Origem:
+                  <input id="origem" style="border: none" readonly />
+                </h6>
 
-                <p>Departamento: Calçados femininos</p>
-                <p>Indicado para: Dia a Dia</p>
-                <p>Material: Sinténtico</p>
-                <p>Garantia do Fabricante: Contra defeito de fabricação</p>
-                <p>Origem: Nacional</p>
-                <p>Marca: Santa Lolla</p>
                 <ul class="list-inline">
                   <li class="list-inline-item">
                     <h6>Cor: Azul</h6>
@@ -403,15 +428,6 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                  </li>
-                </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -472,15 +488,7 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
+
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -542,15 +550,9 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                  </li>
-                </ul>
+                <ul
+                  class="list-unstyled d-flex justify-content-center mb-1"
+                ></ul>
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -610,15 +612,7 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
+
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -678,15 +672,7 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
+
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -747,15 +733,6 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -814,15 +791,6 @@ https://templatemo.com/tm-559-zay-shop
                     <span
                       class="product-color-dot color-dot-green float-left rounded-circle ml-1"
                     ></span>
-                  </li>
-                </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
                   </li>
                 </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
@@ -885,15 +853,6 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -954,15 +913,6 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
               </div>
             </div>
@@ -1021,15 +971,6 @@ https://templatemo.com/tm-559-zay-shop
                     <span
                       class="product-color-dot color-dot-green float-left rounded-circle ml-1"
                     ></span>
-                  </li>
-                </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
                   </li>
                 </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
@@ -1092,15 +1033,6 @@ https://templatemo.com/tm-559-zay-shop
                     ></span>
                   </li>
                 </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                  </li>
-                </ul>
                 <p class="text-center mb-0">R$49.90</p>
               </div>
             </div>
@@ -1159,15 +1091,6 @@ https://templatemo.com/tm-559-zay-shop
                     <span
                       class="product-color-dot color-dot-green float-left rounded-circle ml-1"
                     ></span>
-                  </li>
-                </ul>
-                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                  <li>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-warning fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
-                    <i class="text-muted fa fa-star"></i>
                   </li>
                 </ul>
                 <p class="text-center mb-0">R$ 49.90</p>
@@ -1305,8 +1228,6 @@ https://templatemo.com/tm-559-zay-shop
         </div>
       </div>
     </footer>
-    <!-- End Fo
-    
 
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
@@ -1349,6 +1270,39 @@ https://templatemo.com/tm-559-zay-shop
           }
         ]
       })
+    </script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search)
+      const referencia = urlParams.get('id')
+
+      axios
+        .get('http://localhost:3000/produto/' + referencia + '')
+        .then(function (response) {
+          document.getElementById('referencia').value = response.data._id
+          document.getElementById('descricao').value = response.data.descricao
+          document.getElementById('grupo').value = response.data.grupo
+          document.getElementById('subgrupo').value = response.data.subgrupo
+          document.getElementById('uso').value = response.data.uso
+          document.getElementById('origem').value = response.data.origem
+          document.getElementById('preco_venda').value =
+            response.data.preco_venda
+          document.getElementById('img_produto').src = response.data.img
+          document.getElementById('carousel-img-1').src = response.data.img
+          document.getElementById('carousel-img-2').src = response.data.img
+          document.getElementById('carousel-img-3').src = response.data.img
+          document.getElementById('carousel-img-4').src = response.data.img
+          document.getElementById('carousel-img-5').src = response.data.img
+          document.getElementById('carousel-img-6').src = response.data.img
+          document.getElementById('carousel-img-7').src = response.data.img
+          document.getElementById('carousel-img-8').src = response.data.img
+          document.getElementById('carousel-img-9').src = response.data.img
+        })
+        .catch(function (err) {
+          document.getElementById('output').innerHTML =
+            '<div class="alert alert-danger" role="alert"><strong>' +
+            err.message +
+            '</strong></div>'
+        })
     </script>
     <!-- End Slider Script -->
   </body>

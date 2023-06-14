@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
   </head>
   <body class="bg-light">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <nav class="bg-white navbar navbar-expand-lg navbar-light shadow">
       <div class="container d-flex justify-content-between align-items-center">
         <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
@@ -74,6 +75,7 @@
         </div>
       </div>
     </nav>
+    <div id="output"></div>
     <section>
       <div class="container">
         <div class="row align-items-center py-5">
@@ -88,9 +90,9 @@
             </div>
             <div class="row g-3 mb-2 align-items-center">
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="inputEmail"
+                id="email"
                 placeholder="E-mail"
               />
             </div>
@@ -98,13 +100,17 @@
               <input
                 type="password"
                 class="form-control"
-                id="inputPassword"
+                id="senha"
                 placeholder="Senha"
               />
             </div>
             <div class="row g-3 align-items-center">
               <a href="redefinicaosenha.html">Esqueci minha senha</a>
-              <button type="button" class="btn btn-successAlternative px-3">
+              <button
+                id="btnAcessar"
+                type="button"
+                class="btn btn-successAlternative px-3"
+              >
                 <a class="nav-icon position-relative text-white" href="#"
                   >Acesse sua conta</a
                 >
@@ -121,4 +127,45 @@
       </div>
     </section>
   </body>
+  <script>
+    const emailInput = document.getElementById('email')
+    const senhaInput = document.getElementById('senha')
+
+    const btnAcessar = document.getElementById('btnAcessar')
+
+    btnAcessar.addEventListener('click', () => {
+      const email = emailInput.value
+      const senha = senhaInput.value
+
+      axios
+        .get('http://localhost:3000/usuario/')
+        .then(function (response) {
+          const emailBd = response.data.email
+
+          for (i = 0; i < 20; i++) {
+            if (emailBd == email) {
+              const senhaBd = response.data.senha
+
+              if (senhaBd == senha) {
+                document.getElementById(
+                  'output'
+                ).innerHTML = `<div class="alert alert-primary alert-dismissible fade show" role="alert">
+                  <strong>Sucesso!</strong> Você está logado.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`
+              } else {
+                document.getElementById('output').innerHTML =
+                  '<div class="alert alert-danger" role="alert"><strong>Senha Inválida</strong></div>'
+              }
+            }
+          }
+        })
+        .catch(function (err) {
+          document.getElementById('output').innerHTML =
+            '<div class="alert alert-danger" role="alert"><strong>' +
+            err.message +
+            '</strong></div>'
+        })
+    })
+  </script>
 </html>

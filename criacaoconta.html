@@ -37,6 +37,7 @@ https://templatemo.com/tm-559-zay-shop
 
   <!-- <body class="bg-cinzaescuro"> -->
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-light shadow bg-white">
       <div class="container d-flex justify-content-between align-items-center">
         <img src="./assets/logo_AAJ.png" alt="logo" href="index.html" />
@@ -85,6 +86,8 @@ https://templatemo.com/tm-559-zay-shop
       </div>
     </nav>
 
+    <div id="output"></div>
+
     <!-- Start Contact -->,
     <div class="container py-5">
       <div class="row text-black">
@@ -93,15 +96,15 @@ https://templatemo.com/tm-559-zay-shop
           <h6>*Obrigatório</h6>
         </div>
       </div>
-      <div class="row-12 py-3">
+      <form id="form1" class="row-12 py-3">
         <form class="col-md-9 m-auto" method="post" role="form">
           <div class="row">
             <div class="form-group col-md-4 mb-3">
               <input
                 type="text"
                 class="form-control mt-1"
-                id="name"
-                name="name"
+                id="nome"
+                name="nome"
                 placeholder="*nome"
               />
             </div>
@@ -109,7 +112,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="sobrenome"
                 name="email"
                 placeholder="*sobrenome"
               />
@@ -118,7 +121,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="sexo"
                 name="email"
                 placeholder="*sexo"
               />
@@ -130,7 +133,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="text"
                 class="form-control mt-1"
-                id="name"
+                id="dataNascimento"
                 name="name"
                 placeholder="*data de nascimento"
               />
@@ -139,7 +142,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="telefone"
                 name="email"
                 placeholder="*telefone"
               />
@@ -148,7 +151,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="cpf"
                 name="email"
                 placeholder="*CPF"
               />
@@ -162,7 +165,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="text"
                 class="form-control mt-1"
-                id="name"
+                id="cep"
                 name="name"
                 placeholder="*CEP"
               />
@@ -171,7 +174,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="endereco"
                 name="email"
                 placeholder="*endereço"
               />
@@ -180,7 +183,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="numero"
                 name="email"
                 placeholder="*número"
               />
@@ -192,7 +195,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="text"
                 class="form-control mt-1"
-                id="name"
+                id="complemento"
                 name="name"
                 placeholder="complemento"
               />
@@ -201,7 +204,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="bairro"
                 name="email"
                 placeholder="*bairro"
               />
@@ -213,7 +216,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="text"
                 class="form-control mt-1"
-                id="name"
+                id="estado"
                 name="name"
                 placeholder="*estado"
               />
@@ -222,7 +225,7 @@ https://templatemo.com/tm-559-zay-shop
               <input
                 type="email"
                 class="form-control mt-1"
-                id="email"
+                id="cidade"
                 name="email"
                 placeholder="*cidade"
               />
@@ -237,7 +240,7 @@ https://templatemo.com/tm-559-zay-shop
                 <input
                   type="text"
                   class="form-control mt-1"
-                  id="name"
+                  id="email"
                   name="name"
                   placeholder="*e-mail"
                 />
@@ -247,7 +250,7 @@ https://templatemo.com/tm-559-zay-shop
                 <input
                   type="text"
                   class="form-control mt-1"
-                  id="name"
+                  id="senha"
                   name="name"
                   placeholder="*cria sua senha"
                 />
@@ -257,14 +260,14 @@ https://templatemo.com/tm-559-zay-shop
                 <input
                   type="text"
                   class="form-control mt-1"
-                  id="name"
+                  id="senha_confirmacao"
                   name="name"
                   placeholder="*confirme sua senha"
                 />
               </div>
             </div>
 
-            <div class="form-group col-6 mb-3 text-black">
+            <!-- <div class="form-group col-6 mb-3 text-black">
               <div class="row">
                 <div class="col-1">
                   <input type="checkbox" id="permissao1" />
@@ -296,161 +299,245 @@ https://templatemo.com/tm-559-zay-shop
                   </label>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <hr />
 
           <div class="row">
             <div class="col-3 text-start mt-2">
-              <button type="submit" class="btn btn-success btn-lg px-3">
+              <button id="btnCriarConta" class="btn btn-success btn-lg px-3">
                 Criar conta
               </button>
             </div>
           </div>
         </form>
-      </div>
-    </div>
-    <!-- End Contact -->
 
-    <!-- Start Footer -->
-    <footer class="bg-white" id="tempaltemo_footer">
-      <div class="container">
-        <div class="row text-black mb-0">
-          <div class="col-md-8 pt-5">
-            <div class="row text-black mb-4">
-              <div class="col-12 mb-2">
-                <h3 class="h3 text-black pb-0 border-light logo">Nos siga</h3>
-              </div>
-              <div class="col-auto me-auto">
-                <ul class="list-inline text-left footer-icons mb-0">
-                  <li class="list-inline-item rounded-circle text-center">
-                    <a
-                      class="text-black text-decoration-none"
-                      target="_blank"
-                      href="https://www.instagram.com/"
-                      ><i class="fab fa-instagram fa-lg fa-fw"></i
-                    ></a>
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <a
-                      class="text-black text-decoration-none"
-                      target="_blank"
-                      href="https://www.tiktok.com/pt-BR/"
-                      ><i class="fab fa-tiktok fa-lg fa-fw"></i
-                    ></a>
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <a
-                      class="text-black text-decoration-none"
-                      target="_blank"
-                      href="http://facebook.com/"
-                      ><i class="fab fa-facebook-f fa-lg fa-fw"></i
-                    ></a>
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <a
-                      class="text-black text-decoration-none"
-                      target="_blank"
-                      href="https://www.youtube.com/watch?v=tollGa3S0o8"
-                      ><i class="fab fa-youtube fa-lg fa-fw"></i
-                    ></a>
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <a
-                      class="text-black text-decoration-none"
-                      target="_blank"
-                      href="https://contate.me/aajdesenvweb"
-                      ><i class="fab fa-whatsapp fa-lg fa-fw"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <!-- End Contact -->
 
-            <div class="row text-black mb-4">
-              <div class="col-12 mb-2">
-                <h3 class="h3 text-black pb-0 border-light logo">
-                  Formas de pagamento
-                </h3>
-              </div>
-              <div class="col-auto me-auto">
-                <ul class="list-inline text-left footer-icons">
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/ncard.svg" alt="ncard" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/visa.svg" alt="visa" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/mastercard.svg" alt="mastercard" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/amex.svg" alt="amex" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/dinersclub.svg" alt="dinersclub" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/hipercard.svg" alt="hipercard" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/elo.svg" alt="elo" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/boleto.svg" alt="boleto" />
-                  </li>
-                  <li class="list-inline-item rounded-circle text-center">
-                    <img src="./assets/pix.svg" alt="pix" />
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <!-- Start Footer -->
+        <footer class="bg-white" id="tempaltemo_footer">
+          <div class="container">
+            <div class="row text-black mb-0">
+              <div class="col-md-8 pt-5">
+                <div class="row text-black mb-4">
+                  <div class="col-12 mb-2">
+                    <h3 class="h3 text-black pb-0 border-light logo">
+                      Nos siga
+                    </h3>
+                  </div>
+                  <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons mb-0">
+                      <li class="list-inline-item rounded-circle text-center">
+                        <a
+                          class="text-black text-decoration-none"
+                          target="_blank"
+                          href="https://www.instagram.com/"
+                          ><i class="fab fa-instagram fa-lg fa-fw"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <a
+                          class="text-black text-decoration-none"
+                          target="_blank"
+                          href="https://www.tiktok.com/pt-BR/"
+                          ><i class="fab fa-tiktok fa-lg fa-fw"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <a
+                          class="text-black text-decoration-none"
+                          target="_blank"
+                          href="http://facebook.com/"
+                          ><i class="fab fa-facebook-f fa-lg fa-fw"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <a
+                          class="text-black text-decoration-none"
+                          target="_blank"
+                          href="https://www.youtube.com/watch?v=tollGa3S0o8"
+                          ><i class="fab fa-youtube fa-lg fa-fw"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <a
+                          class="text-black text-decoration-none"
+                          target="_blank"
+                          href="https://contate.me/aajdesenvweb"
+                          ><i class="fab fa-whatsapp fa-lg fa-fw"></i
+                        ></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-          <div class="col-md-4 pt-5">
-            <div class="row">
-              <div class="col-5" style="padding-right: 0">
-                <h3 class="h3 text-black pb-3 border-light logo">Sobre nós</h3>
-                <!-- <a class="h3 text-black pb-3 border-light logo" href="sobre.html">
+                <div class="row text-black mb-4">
+                  <div class="col-12 mb-2">
+                    <h3 class="h3 text-black pb-0 border-light logo">
+                      Formas de pagamento
+                    </h3>
+                  </div>
+                  <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/ncard.svg" alt="ncard" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/visa.svg" alt="visa" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/mastercard.svg" alt="mastercard" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/amex.svg" alt="amex" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/dinersclub.svg" alt="dinersclub" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/hipercard.svg" alt="hipercard" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/elo.svg" alt="elo" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/boleto.svg" alt="boleto" />
+                      </li>
+                      <li class="list-inline-item rounded-circle text-center">
+                        <img src="./assets/pix.svg" alt="pix" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 pt-5">
+                <div class="row">
+                  <div class="col-5" style="padding-right: 0">
+                    <h3 class="h3 text-black pb-3 border-light logo">
+                      Sobre nós
+                    </h3>
+                    <!-- <a class="h3 text-black pb-3 border-light logo" href="sobre.html">
                   <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i>
                  </a> -->
-              </div>
-              <div class="col-7" style="padding: 0">
-                <!-- <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i> -->
-                <a
-                  class="h3 text-black pb-3 border-light logo"
-                  href="sobre.html"
-                >
-                  <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i>
-                </a>
+                  </div>
+                  <div class="col-7" style="padding: 0">
+                    <!-- <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i> -->
+                    <a
+                      class="h3 text-black pb-3 border-light logo"
+                      href="sobre.html"
+                    >
+                      <i class="fa fa-arrow-up fa-fw" style="rotate: 45deg"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="row w-40 pb-4">
+                  <a href="#">
+                    <img
+                      class="card-img img-fluid"
+                      src="assets/logo_AAJ.png"
+                      alt="logo"
+                    />
+                  </a>
+                </div>
+                <label class="text-black pb-0 border-light">©2023 - AAJ.</label>
+                <label class="text-black pb-3 border-light">
+                  Todos os direitos reservados.
+                </label>
               </div>
             </div>
-            <div class="row w-40 pb-4">
-              <a href="#">
-                <img
-                  class="card-img img-fluid"
-                  src="assets/logo_AAJ.png"
-                  alt="logo"
-                />
-              </a>
-            </div>
-            <label class="text-black pb-0 border-light">©2023 - AAJ.</label>
-            <label class="text-black pb-3 border-light">
-              Todos os direitos reservados.
-            </label>
           </div>
-        </div>
-      </div>
-    </footer>
-    <!-- End Footer -->
+        </footer>
+        <!-- End Footer -->
 
-    <!-- Start Script -->
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/templatemo.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <!-- End Script -->
+        <!-- Start Script -->
+        <script src="assets/js/jquery-1.11.0.min.js"></script>
+        <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/templatemo.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script>
+          const codigoInput = document.getElementById('codigo')
+          const nomeInput = document.getElementById('nome')
+          const sobrenomeInput = document.getElementById('sobrenome')
+          const sexoInput = document.getElementById('sexo')
+          const dataNascimentoInput = document.getElementById('dataNascimento')
+          const telefoneInput = document.getElementById('telefone')
+          const cpfInput = document.getElementById('cpf')
+          const cepInput = document.getElementById('cep')
+          const enderecoInput = document.getElementById('endereco')
+          const numeroInput = document.getElementById('numero')
+          const complementoInput = document.getElementById('complemento')
+          const bairroInput = document.getElementById('bairro')
+          const estadoInput = document.getElementById('estado')
+          const cidadeInput = document.getElementById('cidade')
+
+          const emailInput = document.getElementById('email')
+          const senhaInput = document.getElementById('senha')
+          const senha_confirmacaoInput =
+            document.getElementById('senha_confirmacao')
+
+          const btnCriarConta = document.getElementById('btnCriarConta')
+
+          btnCriarConta.addEventListener('click', () => {
+            const nome = nomeInput.value
+            const sobrenome = sobrenomeInput.value
+            const sexo = sexoInput.value
+            const dataNascimento = dataNascimentoInput.value
+            const telefone = telefoneInput.value
+            const cpf = cpfInput.value
+            const cep = cepInput.value
+            const endereco = enderecoInput.value
+            const numero = numeroInput.value
+            const complemento = complementoInput.value
+            const bairro = bairroInput.value
+            const estado = estadoInput.value
+            const cidade = cidadeInput.value
+            const email = emailInput.value
+            const senha = senhaInput.value
+            const senha_confirmacao = senha_confirmacaoInput
+
+            axios
+              .post('http://localhost:3000/usuario', {
+                nome: nome,
+                sobrenome: sobrenome,
+                sexo: sexo,
+                data_nascimento: dataNascimento,
+                telefone: telefone,
+                cpf: cpf,
+                cep: cep,
+                endereco: endereco,
+                numero: numero,
+                complemento: complemento,
+                bairro: bairro,
+                estado: estado,
+                cidade: cidade,
+                email: email,
+                senha: senha,
+                senha_confirmacao: senha_confirmacao
+              })
+              .then(response => {
+                output.innerHTML = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sucesso!</strong> Cadastro efetuado.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+                form1.reset()
+              })
+              .catch(function (err) {
+                document.getElementById('output').innerHTML =
+                  `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Erro! </strong>` +
+                  err.message +
+                  `
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>`
+              })
+          })
+        </script>
+
+        <!-- End Script -->
+      </form>
+    </div>
   </body>
 </html>

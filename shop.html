@@ -294,7 +294,10 @@ https://templatemo.com/tm-559-zay-shop
                   '<div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">' +
                   '<ul class="list-unstyled">' +
                   '<li>' +
-                  '<a class="btn btn-success text-white mt-2" href="shop-single.html">' +
+                  '<a class="btn btn-success text-white mt-2" href="#" role="button"' +
+                  'onclick="javascript:return verProduto(`' +
+                  und_produto.referencia +
+                  '`)">' +
                   '<i class="far fa-eye"></i>' +
                   '</a>' +
                   '</li>' +
@@ -327,6 +330,10 @@ https://templatemo.com/tm-559-zay-shop
             err.message +
             '</strong></div>'
         })
+
+      function verProduto(referencia) {
+        window.location.href = 'shop-single.html?id=' + referencia + ''
+      }
     </script>
     <!-- End Script -->
   </body>
